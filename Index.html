@@ -1,12 +1,48 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" initial-scale=1.0 />
-<link href="styles.css" rel="stylesheet" />
-<title>Dev Project Home</title>
-</head>
-<body>
-Hello !!
-</body>
+<html lang="en" ng-app="DevProject" ng-strict-di>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" initial-scale=1.0 />
+
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="styles/styles.css" rel="stylesheet" />
+
+		<title>Dev Project - {{vm.title || 'Home'}}</title>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.12/angular-strap.tpl.min.js"/>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
+
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" data-ui-sref="home">
+					<i class="fa fa-2x fa-home" aria-hidden="true"/>
+				</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li>
+					<a ui-sref="home">Home</a>
+				</li>
+				<li>
+					<a ui-sref="about">About</a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- MAIN CONTENT -->
+		<div class="col-xs-12">
+			<div ui-view />
+		</div>
+
+		<!-- Load Modules -->
+		<script src="core/module.js"/>
+		<script src="core/config.js"/>
+	</body>
 </html>
+
